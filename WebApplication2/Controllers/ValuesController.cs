@@ -57,7 +57,7 @@ namespace WebApplication2.Controllers
         }
 
         // GET api/<ValuesController>/5
-        [HttpGet("{ id}")]
+        [HttpGet("{id}")]
         public string Get(int id)
         {
             return "value";
