@@ -56,9 +56,6 @@ namespace WebApplication2
             var appConfig = new ApplicationSettings();
             this.Configuration.Bind("ApplicationSettings", appConfig);
             services.AddSingleton(appConfig);
-
-            
-
             return services;
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -69,11 +66,6 @@ namespace WebApplication2
                 app.UseDeveloperExceptionPage();
             }
             app.UseCors("AllowMyOrigins");
-
-           // app.UseCors(x => x
-           //.AllowAnyOrigin()
-           //.AllowAnyMethod()
-           //.AllowAnyHeader());
 
             app.UseHttpsRedirection();
 
