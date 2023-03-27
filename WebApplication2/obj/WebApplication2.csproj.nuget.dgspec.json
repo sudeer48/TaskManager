@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nspira\\Desktop\\Sudeer\\WebApplication2\\WebApplication2\\WebApplication2.csproj": {}
+    "D:\\git repository\\TaskManager\\WebApplication2\\WebApplication2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nspira\\Desktop\\Sudeer\\WebApplication2\\WebApplication2\\WebApplication2.csproj": {
+    "D:\\git repository\\TaskManager\\WebApplication2\\WebApplication2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nspira\\Desktop\\Sudeer\\WebApplication2\\WebApplication2\\WebApplication2.csproj",
+        "projectUniqueName": "D:\\git repository\\TaskManager\\WebApplication2\\WebApplication2.csproj",
         "projectName": "WebApplication2",
-        "projectPath": "C:\\Users\\Nspira\\Desktop\\Sudeer\\WebApplication2\\WebApplication2\\WebApplication2.csproj",
-        "packagesPath": "C:\\Users\\Nspira\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nspira\\Desktop\\Sudeer\\WebApplication2\\WebApplication2\\obj\\",
+        "projectPath": "D:\\git repository\\TaskManager\\WebApplication2\\WebApplication2.csproj",
+        "packagesPath": "C:\\Users\\sudee\\.nuget\\packages\\",
+        "outputPath": "D:\\git repository\\TaskManager\\WebApplication2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Nspira\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sudee\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -44,6 +44,10 @@
               "target": "Package",
               "version": "[2.0.3, )"
             },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.1.32, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.30, )"
@@ -55,6 +59,14 @@
             "Oracle.ManagedDataAccess.Core": {
               "target": "Package",
               "version": "[3.21.80, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
             }
           },
           "imports": [
@@ -76,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

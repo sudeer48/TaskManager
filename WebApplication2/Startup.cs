@@ -1,17 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using static System.Net.Mime.MediaTypeNames;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace WebApplication2
 {
@@ -43,12 +37,35 @@ namespace WebApplication2
                             .AllowAnyHeader()
                             .SetIsOriginAllowedToAllowWildcardSubdomains()
                             .AllowAnyMethod();
+
                     });
             });
             services.AddResponseCaching();
             services.AddMemoryCache();
             services.AddOptions();
             services = LoadAppSettings(services);
+            services.AddSwaggerGen();
+            services.AddMvc();
+            services.AddAuthentication(
+                options => {
+                    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+                    }).AddJwtBearer(option => {
+                        option.SaveToken = true;
+                        option.RequireHttpsMetadata= false;
+                        option.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters()
+                        {
+                            ValidateIssuer = true,
+                            ValidateAudience = true,
+                            ValidAudience = Configuration["JWT:ValidAudience"],
+                            ValidIssuer = Configuration["JWT:ValidIsuser"],
+                            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("JWT:Secret"))
+
+                        };
+                    })
+                ;
+            services.AddAuthorization();
         }
 
         private IServiceCollection LoadAppSettings(IServiceCollection services)
@@ -56,9 +73,6 @@ namespace WebApplication2
             var appConfig = new ApplicationSettings();
             this.Configuration.Bind("ApplicationSettings", appConfig);
             services.AddSingleton(appConfig);
-
-            
-
             return services;
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -68,14 +82,11 @@ namespace WebApplication2
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseSwagger();
+            app.UseSwaggerUI();
             app.UseCors("AllowMyOrigins");
-
-           // app.UseCors(x => x
-           //.AllowAnyOrigin()
-           //.AllowAnyMethod()
-           //.AllowAnyHeader());
-
             app.UseHttpsRedirection();
+            app.UseAuthentication();
 
             app.UseRouting();
 
