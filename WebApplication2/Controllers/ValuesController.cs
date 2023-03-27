@@ -5,11 +5,15 @@ using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Dapper;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using Oracle.ManagedDataAccess.Client;
 using WebApplication2.Entities;
+using WebApplication2.Models;
+using WebApplication2.Service;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -52,7 +56,7 @@ namespace WebApplication2.Controllers
                     throw;
                 }
 
-                return dbConn.Query<Student>(strQuery).ToList();
+                return dbConn.Query<Student>(strQuery).OrderBy(x => x.id).ToList();
             }
         }
 
@@ -78,7 +82,7 @@ namespace WebApplication2.Controllers
                 {
 
                     connection.Open();
-                    affectedRows = connection.Execute(@"Insert into TBL_STUDENT_DTL(Id, Name,SchoolId,Grade) values (:Id, :Name,:SchoolId,:Grade)", new { Id = students.id, Name = students.name, SchoolId = students.schoolId, Grade = students.grade });
+                    affectedRows = connection.Execute(@"Insert into TBL_STUDENT_DTL(Id, Name,SchoolId,Grade,Username,Password) values (:Id, :Name,:SchoolId,:Grade,:Username,:Password)", new { Id = students.id, Name = students.name, SchoolId = students.schoolId, Grade = students.grade, Username = students.username, Password = students.password });
                     connection.Close();
                     affectedRows = +1;
 
@@ -108,6 +112,8 @@ namespace WebApplication2.Controllers
             return response;
 
         }
+
+
 
         // PUT api/<ValuesController>/5
         [HttpPut("{id}")]
@@ -156,6 +162,32 @@ namespace WebApplication2.Controllers
                 {
                     Response = true,
                     Message = "Record deleted sucessfully."
+                };
+            }
+            return response;
+        }
+
+        [Route("api/Authentication")]
+        [HttpPost]
+        public async Task<EmpLeaveResponse> Authentication([FromBody] LoginViewModel student)
+        {
+            EmpLeaveResponse response = null;
+            UserService a = new UserService(Configuration);
+            var Result = a.Authenticate(student);
+            if (Result.Count == 1)
+            {
+                response = new EmpLeaveResponse
+                {
+                    Response = true,
+                    Message = "Authentication Successfully."
+                };
+            }
+            else
+            {
+                response = new EmpLeaveResponse
+                {
+                    Response = false,
+                    Message = "Invalid Credentials."
                 };
             }
             return response;
