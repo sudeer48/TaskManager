@@ -34,7 +34,7 @@ namespace WebApplication2.Controllers
         string str1 = "Data Source=.;Initial Catalog=TaskManager;Integrated Security=True";
 
         // GET: api/<SQL_UserManagementController1cs>
-        //[Authorize]
+        [Authorize]
         [Route("api/GetEmployeeDetails")]
         [HttpGet]
         public IList<Student> Get()
@@ -187,23 +187,41 @@ namespace WebApplication2.Controllers
             //    };
             //}
 
-          
 
-            var authClaims = new List<Claim>
-                {
-                    new Claim(ClaimTypes.Name,student.username),
-                    new Claim(System.IdentityModel.Tokens.Jwt.JwtRegisteredClaimNames.Jti,Guid.NewGuid().ToString())
-                                    };
-            var authSignInKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration["JWT:Secret"]));
-            var token = new JwtSecurityToken(
-                issuer: Configuration["JWT:ValidIsuser"],
-                audience: Configuration["JWT:ValidAudience"],
-                expires: DateTime.Now.AddDays(1),
-                claims: authClaims,
-                signingCredentials: new SigningCredentials(authSignInKey, SecurityAlgorithms.HmacSha256Signature)
-                );
+
+            //var authClaims = new List<Claim>
+            //    {
+            //        new Claim(ClaimTypes.Name,student.username),
+            //        new Claim(System.IdentityModel.Tokens.Jwt.JwtRegisteredClaimNames.Jti,Guid.NewGuid().ToString())
+            //                        };
+            //var authSignInKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration["JWT:Secret"]));
+            //var token = new JwtSecurityToken(
+            //    issuer: Configuration["JWT:ValidIsuser"],
+            //    audience: Configuration["JWT:ValidAudience"],
+            //    expires: DateTime.Now.AddDays(1),
+            //    claims: authClaims,
+            //    signingCredentials: new SigningCredentials(authSignInKey, SecurityAlgorithms.HmacSha256Signature)
+            //    );
+
+            //string tokenval= new JwtSecurityTokenHandler().WriteToken(token);
+
+
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]));
+            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+            var claims = new[]
+            {
+                new Claim(ClaimTypes.NameIdentifier,student.username),
+                //new Claim(ClaimTypes.Role,user.Role)
+            };
+            var token = new JwtSecurityToken(Configuration["Jwt:Issuer"],
+                Configuration["Jwt:Audience"],
+                claims,
+                expires: DateTime.Now.AddMinutes(15),
+                signingCredentials: credentials);
+
 
             string tokenval= new JwtSecurityTokenHandler().WriteToken(token);
+
 
             response = new EmpLeaveResponse
             {
@@ -212,5 +230,8 @@ namespace WebApplication2.Controllers
             };
             return response;
         }
+
+
+
     }
 }

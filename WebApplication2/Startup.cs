@@ -46,26 +46,39 @@ namespace WebApplication2
             services = LoadAppSettings(services);
             services.AddSwaggerGen();
             services.AddMvc();
-            services.AddAuthentication(
-                options => {
-                    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-                    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-                    }).AddJwtBearer(option => {
-                        option.SaveToken = true;
-                        option.RequireHttpsMetadata= false;
-                        option.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters()
-                        {
-                            ValidateIssuer = true,
-                            ValidateAudience = true,
-                            ValidAudience = Configuration["JWT:ValidAudience"],
-                            ValidIssuer = Configuration["JWT:ValidIsuser"],
-                            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("JWT:Secret"))
+            //services.AddAuthentication(
+            //    options => {
+            //        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+            //        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            //        options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+            //        }).AddJwtBearer(option => {
+            //            option.SaveToken = true;
+            //            option.RequireHttpsMetadata= false;
+            //            option.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters()
+            //            {
+            //                ValidateIssuer = true,
+            //                ValidateAudience = true,
+            //                ValidAudience = Configuration["JWT:ValidAudience"],
+            //                ValidIssuer = Configuration["JWT:ValidIsuser"],
+            //                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("JWT:Secret"))
 
-                        };
-                    })
-                ;
-            services.AddAuthorization();
+            //            };
+            //        })
+            //    ;
+            //services.AddAuthorization();
+
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options => {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = Configuration["Jwt:Issuer"],
+                    ValidAudience =Configuration["Jwt:Audience"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
+                };
+            });
         }
 
         private IServiceCollection LoadAppSettings(IServiceCollection services)
