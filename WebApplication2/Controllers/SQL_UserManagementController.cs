@@ -79,9 +79,26 @@ namespace WebApplication2.Controllers
                 {
 
                     connection.Open();
-                    affectedRows = connection.Execute(@"Insert into TBL_STUDENT_DTL(Id, Name,SchoolId,Grade,username,password) values ('" + students.id + "','" + students.name + "','" + students.schoolId + "','" + students.grade + "','" + students.username + "','" + students.password + "')");
+                    string strQuery = string.Empty;
+                    strQuery = @"SELECT username FROM TBL_STUDENT_DTL WHERE username='"+students.username+"'";
+                    int count = connection.Query<Student>(strQuery).Count();
+                    if (count==0)
+                    {
+                        affectedRows = connection.Execute(@"Insert into TBL_STUDENT_DTL(Id, Name,SchoolId,Grade,username,password) values ('" + students.id + "','" + students.name + "','" + students.schoolId + "','" + students.grade + "','" + students.username + "','" + students.password + "')");
+                        //affectedRows = +1;
+                    }
+                    else
+                    {
+                        response = new EmpLeaveResponse
+                        {
+                            Response = true,
+                            Message = "UserName Already Exist in the System.",
+                            isSuccess=false
+                        };
+                        return response;
+                    }
                     connection.Close();
-                    affectedRows = +1;
+                   
 
                 }
                 catch (System.Exception ex)
@@ -90,12 +107,13 @@ namespace WebApplication2.Controllers
                     throw;
                 }
             }
-            if (affectedRows != 1)
+            if (affectedRows == 1)
             {
                 response = new EmpLeaveResponse
                 {
                     Response = true,
-                    Message = "Your leave request is sucessfully submitted"
+                    Message = "Your leave request is sucessfully submitted",
+                     isSuccess = true
                 };
             }
             else
@@ -103,7 +121,8 @@ namespace WebApplication2.Controllers
                 response = new EmpLeaveResponse
                 {
                     Response = true,
-                    Message = "Facing the issue while inserting."
+                    Message = "Facing the issue while inserting.",
+                     isSuccess = false
                 };
             }
             return response;
@@ -148,7 +167,8 @@ namespace WebApplication2.Controllers
                 response = new EmpLeaveResponse
                 {
                     Response = true,
-                    Message = "Facing the issue while deleting."
+                    Message = "Facing the issue while deleting.",
+                    isSuccess = false
                 };
             }
             else
@@ -156,7 +176,8 @@ namespace WebApplication2.Controllers
                 response = new EmpLeaveResponse
                 {
                     Response = true,
-                    Message = "Record deleted sucessfully."
+                    Message = "Record deleted sucessfully.",
+                    isSuccess = true
                 };
             }
             return response;

@@ -2865,19 +2865,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sudee\\.nuget\\packages\\": {}
+    "C:\\Users\\Nspira\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\git repository\\TaskManager\\WebApplication2\\WebApplication2.csproj",
+      "projectUniqueName": "F:\\TaskManager\\TaskManagerNew\\WebApplication2\\WebApplication2.csproj",
       "projectName": "WebApplication2",
-      "projectPath": "D:\\git repository\\TaskManager\\WebApplication2\\WebApplication2.csproj",
-      "packagesPath": "C:\\Users\\sudee\\.nuget\\packages\\",
-      "outputPath": "D:\\git repository\\TaskManager\\WebApplication2\\obj\\",
+      "projectPath": "F:\\TaskManager\\TaskManagerNew\\WebApplication2\\WebApplication2.csproj",
+      "packagesPath": "C:\\Users\\Nspira\\.nuget\\packages\\",
+      "outputPath": "F:\\TaskManager\\TaskManagerNew\\WebApplication2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\sudee\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Nspira\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2951,7 +2951,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

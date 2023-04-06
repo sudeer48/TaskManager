@@ -4,5 +4,7 @@
     {
         public bool Response { get; set; }
         public string Message { get; set; }
+
+        public bool isSuccess { get; set; }
     }
 }
