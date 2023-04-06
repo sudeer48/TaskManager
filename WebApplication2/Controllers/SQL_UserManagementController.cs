@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using WebApplication2.Entities;
 using WebApplication2.Models;
 using WebApplication2.Service;
+using TM.Application.EmployeeManagement.Interfaces;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -24,7 +25,7 @@ namespace WebApplication2.Controllers
     public class SQL_UserManagementController : ControllerBase
     {
         DataContext dataContext = new DataContext();
-
+        private readonly IEmployeeManagementApplication employeeManagementApplication;
         public SQL_UserManagementController(IConfiguration _configuration)
         {
             Configuration = _configuration;
@@ -37,25 +38,28 @@ namespace WebApplication2.Controllers
         [Authorize]
         [Route("api/GetEmployeeDetails")]
         [HttpGet]
-        public IList<Student> Get()
+        public async Task<List<Student>> Get()
         {
-            using (var dbConn = new SqlConnection(str1))
-            {
-                string strQuery = string.Empty;
-                try
-                {
-                    dbConn.Open();
-                    strQuery = @"SELECT * FROM TBL_STUDENT_DTL";
-                    var a = dbConn.Query<Student>(strQuery);
-                }
-                catch (System.Exception ex)
-                {
+            List<Student> employeeDetails = await EmployeeManagementApplication.GetEmployeeLeaves(employeeSLNo, statusId);
+            //using (var dbConn = new SqlConnection(str1))
+            //{
+            //    string strQuery = string.Empty;
+            //    try
+            //    {
+            //        dbConn.Open();
+            //        strQuery = @"SELECT * FROM TBL_STUDENT_DTL";
+            //        var a = dbConn.Query<Student>(strQuery);
+            //    }
+            //    catch (System.Exception ex)
+            //    {
 
-                    throw;
-                }
+            //        throw;
+            //    }
 
-                return dbConn.Query<Student>(strQuery).ToList();
-            }
+            //    return dbConn.Query<Student>(strQuery).ToList();
+            //}
+
+
         }
 
         // GET api/<SQL_UserManagementController1cs>/5
