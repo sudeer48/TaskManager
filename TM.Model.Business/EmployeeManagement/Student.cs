@@ -2,7 +2,7 @@
 
 namespace TM.Model.Business.EmployeeManagement
 {
-    [Table("TBL_STUDENT_DTL")]
+    [Table("TBL_EMPLOYEE_DTL")]
     public class EmployeeDetails
     {
         public int id { get; set; }

@@ -24,7 +24,7 @@ namespace TM.Database.Repository.EmployeeManagement
                 try
                 {
                     dbConn.Open();
-                    strQuery = @"SELECT * FROM TBL_STUDENT_DTL";
+                    strQuery = @"SELECT * FROM TBL_EMPLOYEE_DTL";
                     students = (await dbConn.QueryAsync<EmployeeDetails>(strQuery)).ToList();
                 }
                 catch (System.Exception ex)
@@ -71,7 +71,7 @@ namespace TM.Database.Repository.EmployeeManagement
                 {
 
                     connection.Open();
-                    affectedRows = connection.Execute(@"DELETE FROM TBL_STUDENT_DTL where Id='" + students.id + "'");
+                    affectedRows = connection.Execute(@"DELETE FROM TBL_EMPLOYEE_DTL where Id='" + students.id + "'");
                     connection.Close();
                     affectedRows = +1;
 

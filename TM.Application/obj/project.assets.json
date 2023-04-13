@@ -741,19 +741,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Nspira\\.nuget\\packages\\": {}
+    "C:\\Users\\sudee\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\TaskManager\\TaskManagerNew\\TM.Application\\TM.Application.csproj",
+      "projectUniqueName": "D:\\git repository\\TaskManager\\TM.Application\\TM.Application.csproj",
       "projectName": "TM.Application",
-      "projectPath": "F:\\TaskManager\\TaskManagerNew\\TM.Application\\TM.Application.csproj",
-      "packagesPath": "C:\\Users\\Nspira\\.nuget\\packages\\",
-      "outputPath": "F:\\TaskManager\\TaskManagerNew\\TM.Application\\obj\\",
+      "projectPath": "D:\\git repository\\TaskManager\\TM.Application\\TM.Application.csproj",
+      "packagesPath": "C:\\Users\\sudee\\.nuget\\packages\\",
+      "outputPath": "D:\\git repository\\TaskManager\\TM.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Nspira\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\sudee\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -767,11 +767,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "F:\\TaskManager\\TaskManagerNew\\TM.Domain\\TM.Domain.csproj": {
-              "projectPath": "F:\\TaskManager\\TaskManagerNew\\TM.Domain\\TM.Domain.csproj"
+            "D:\\git repository\\TaskManager\\TM.Domain\\TM.Domain.csproj": {
+              "projectPath": "D:\\git repository\\TaskManager\\TM.Domain\\TM.Domain.csproj"
             },
-            "F:\\TaskManager\\TaskManagerNew\\TM.Model.Business\\TM.Model.Business.csproj": {
-              "projectPath": "F:\\TaskManager\\TaskManagerNew\\TM.Model.Business\\TM.Model.Business.csproj"
+            "D:\\git repository\\TaskManager\\TM.Model.Business\\TM.Model.Business.csproj": {
+              "projectPath": "D:\\git repository\\TaskManager\\TM.Model.Business\\TM.Model.Business.csproj"
             }
           }
         }
@@ -807,7 +807,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

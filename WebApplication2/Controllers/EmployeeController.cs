@@ -72,11 +72,11 @@ namespace WebApplication2.Controllers
 
                     connection.Open();
                     string strQuery = string.Empty;
-                    strQuery = @"SELECT username FROM TBL_STUDENT_DTL WHERE username='" + students.username + "'";
+                    strQuery = @"SELECT username FROM TBL_EMPLOYEE_DTL WHERE username='" + students.username + "'";
                     int count = connection.Query<EmployeeDetails>(strQuery).Count();
                     if (count == 0) 
                     {
-                        affectedRows = connection.Execute(@"Insert into TBL_STUDENT_DTL(Id, Name,SchoolId,Grade,username,password,RoleId) values ('" + students.id + "','" + students.name + "','" + students.schoolId + "','" + students.grade + "','" + students.username + "','" + students.password + "','"+ students.roleId+ "')");
+                        affectedRows = connection.Execute(@"Insert into TBL_EMPLOYEE_DTL(Id, Name,SchoolId,Grade,username,password,RoleId) values ('" + students.id + "','" + students.name + "','" + students.schoolId + "','" + students.grade + "','" + students.username + "','" + students.password + "','"+ students.roleId+ "')");
                         //affectedRows = +1;
                     }
                     else
@@ -131,47 +131,10 @@ namespace WebApplication2.Controllers
         [Route("api/DeleteRecord")]
         [HttpPost]
         //[HttpDelete("{id}")]
-        public async Task<EmpLeaveResponse> Delete([FromBody] EmployeeDetails students)
+        public async Task<EmpLeaveResponse> Delete([FromBody] EmployeeDetails employeeDetails)
         {
             EmpLeaveResponse response = null;
-            int affectedRows = 0;
-            using (var connection = new SqlConnection(str1))
-            {
-                EmployeeDetails objstd = new EmployeeDetails();
-
-                try
-                {
-
-                    connection.Open();
-                    affectedRows = connection.Execute(@"DELETE FROM TBL_STUDENT_DTL where Id='" + students.id + "'");
-                    connection.Close();
-                    affectedRows = +1;
-
-                }
-                catch (System.Exception ex)
-                {
-
-                    throw;
-                }
-            }
-            if (affectedRows != 1)
-            {
-                response = new EmpLeaveResponse
-                {
-                    Response = true,
-                    Message = "Facing the issue while deleting.",
-                    isSuccess = false
-                };
-            }
-            else
-            {
-                response = new EmpLeaveResponse
-                {
-                    Response = true,
-                    Message = "Record deleted sucessfully.",
-                    isSuccess = true
-                };
-            }
+            response= await employeeManagementApplication.Deleterecord(employeeDetails);
             return response;
         }
 

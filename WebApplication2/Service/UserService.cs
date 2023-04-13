@@ -22,7 +22,7 @@ namespace WebApplication2.Service
                 try
                 {
                     dbConn.Open();
-                    strQuery = @"SELECT * FROM TBL_STUDENT_DTL WHERE USERNAME='" + loginViewModel.username + "' AND PASSWORD='" + loginViewModel.password + "'";
+                    strQuery = @"SELECT * FROM TBL_EMPLOYEE_DTL WHERE USERNAME='" + loginViewModel.username + "' AND PASSWORD='" + loginViewModel.password + "'";
                     var a = dbConn.Query<LoginViewModel>(strQuery);
                 }
                 catch (System.Exception ex)

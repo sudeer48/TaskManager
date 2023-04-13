@@ -47,7 +47,7 @@ namespace WebApplication2.Controllers
                 try
                 {
                     dbConn.Open();
-                    strQuery = @"SELECT * FROM TBL_STUDENT_DTL";
+                    strQuery = @"SELECT * FROM TBL_EMPLOYEE_DTL";
                     var a = dbConn.Query<Student>(strQuery);
                 }
                 catch (System.Exception ex)
@@ -82,7 +82,7 @@ namespace WebApplication2.Controllers
                 {
 
                     connection.Open();
-                    affectedRows = connection.Execute(@"Insert into TBL_STUDENT_DTL(Id, Name,SchoolId,Grade,Username,Password) values (:Id, :Name,:SchoolId,:Grade,:Username,:Password)", new { Id = students.id, Name = students.name, SchoolId = students.schoolId, Grade = students.grade, Username = students.username, Password = students.password });
+                    affectedRows = connection.Execute(@"Insert into TBL_EMPLOYEE_DTL(Id, Name,SchoolId,Grade,Username,Password) values (:Id, :Name,:SchoolId,:Grade,:Username,:Password)", new { Id = students.id, Name = students.name, SchoolId = students.schoolId, Grade = students.grade, Username = students.username, Password = students.password });
                     connection.Close();
                     affectedRows = +1;
 
@@ -137,7 +137,7 @@ namespace WebApplication2.Controllers
                 {
 
                     connection.Open();
-                    affectedRows = connection.Execute(@"DELETE FROM TBL_STUDENT_DTL where Id=:Id", new { Id = students.id });
+                    affectedRows = connection.Execute(@"DELETE FROM TBL_EMPLOYEE_DTL where Id=:Id", new { Id = students.id });
                     connection.Close();
                     affectedRows = +1;
 
