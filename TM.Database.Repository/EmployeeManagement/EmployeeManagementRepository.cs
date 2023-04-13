@@ -1,14 +1,8 @@
-﻿using Dapper;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Phoenix.Infrastructure.Dapper;
-using System;
-using System.Collections.Generic;
-using System.Data;
+using TM.Model.Business.EmployeeManagement;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WebApplication2.Entities;
+using Dapper;
 
 namespace TM.Database.Repository.EmployeeManagement
 {
@@ -20,17 +14,18 @@ namespace TM.Database.Repository.EmployeeManagement
             this.configuration = configuration;
         }
         string str1 = "Data Source=.;Initial Catalog=TaskManager;Integrated Security=True";
-        public async Task<List<Student>> GetEmployeeDetails()
+        public async Task<List<EmployeeDetails>> GetEmployeeDetails()
         {
-            List<Student> students = new List<Student>();
+            List<EmployeeDetails> students = new List<EmployeeDetails>();
             using (var dbConn = new SqlConnection(str1))
             {
+                GetRoleDetails();
                 string strQuery = string.Empty;
                 try
                 {
                     dbConn.Open();
                     strQuery = @"SELECT * FROM TBL_STUDENT_DTL";
-                    students = (await dbConn.QueryAsync<Student>(strQuery)).ToList();
+                    students = (await dbConn.QueryAsync<EmployeeDetails>(strQuery)).ToList();
                 }
                 catch (System.Exception ex)
                 {
@@ -41,5 +36,73 @@ namespace TM.Database.Repository.EmployeeManagement
                 return students;
             }
         }
+
+        public async Task<List<RoleInformation>> GetRoleDetails()
+        {
+            List<RoleInformation> students = new List<RoleInformation>();
+            using (var dbConn = new SqlConnection(str1))
+            {
+                string strQuery = string.Empty;
+                try
+                {
+                    dbConn.Open();
+                    strQuery = @"SELECT * FROM TBL_ROLEMST";
+                    students = (await dbConn.QueryAsync<RoleInformation>(strQuery)).ToList();
+                }
+                catch (System.Exception ex)
+                {
+
+                    throw;
+                }
+
+                return students;
+            }
+        }
+
+        public async Task<EmpLeaveResponse> DeleteRecord(EmployeeDetails students)
+        {
+            EmpLeaveResponse response = null;
+            int affectedRows = 0;
+            using (var connection = new SqlConnection(str1))
+            {
+                EmployeeDetails objstd = new EmployeeDetails();
+
+                try
+                {
+
+                    connection.Open();
+                    affectedRows = connection.Execute(@"DELETE FROM TBL_STUDENT_DTL where Id='" + students.id + "'");
+                    connection.Close();
+                    affectedRows = +1;
+
+                }
+                catch (System.Exception ex)
+                {
+
+                    throw;
+                }
+            }
+            if (affectedRows != 1)
+            {
+                response = new EmpLeaveResponse
+                {
+                    Response = true,
+                    Message = "Facing the issue while deleting.",
+                    isSuccess = false
+                };
+            }
+            else
+            {
+                response = new EmpLeaveResponse
+                {
+                    Response = true,
+                    Message = "Record deleted sucessfully.",
+                    isSuccess = true
+                };
+            }
+            return response;
+        }
+
+
     }
 }

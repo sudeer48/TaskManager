@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\git repository\\TaskManager\\TM.Application\\TM.Application.csproj": {}
+    "F:\\TaskManager\\TaskManagerNew\\TM.Application\\TM.Application.csproj": {}
   },
   "projects": {
-    "D:\\git repository\\TaskManager\\TM.Application\\TM.Application.csproj": {
+    "F:\\TaskManager\\TaskManagerNew\\TM.Application\\TM.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\git repository\\TaskManager\\TM.Application\\TM.Application.csproj",
+        "projectUniqueName": "F:\\TaskManager\\TaskManagerNew\\TM.Application\\TM.Application.csproj",
         "projectName": "TM.Application",
-        "projectPath": "D:\\git repository\\TaskManager\\TM.Application\\TM.Application.csproj",
-        "packagesPath": "C:\\Users\\sudee\\.nuget\\packages\\",
-        "outputPath": "D:\\git repository\\TaskManager\\TM.Application\\obj\\",
+        "projectPath": "F:\\TaskManager\\TaskManagerNew\\TM.Application\\TM.Application.csproj",
+        "packagesPath": "C:\\Users\\Nspira\\.nuget\\packages\\",
+        "outputPath": "F:\\TaskManager\\TaskManagerNew\\TM.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\sudee\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Nspira\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,11 +28,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\git repository\\TaskManager\\TM.Domain\\TM.Domain.csproj": {
-                "projectPath": "D:\\git repository\\TaskManager\\TM.Domain\\TM.Domain.csproj"
+              "F:\\TaskManager\\TaskManagerNew\\TM.Domain\\TM.Domain.csproj": {
+                "projectPath": "F:\\TaskManager\\TaskManagerNew\\TM.Domain\\TM.Domain.csproj"
               },
-              "D:\\git repository\\TaskManager\\WebApplication2\\WebApplication2.csproj": {
-                "projectPath": "D:\\git repository\\TaskManager\\WebApplication2\\WebApplication2.csproj"
+              "F:\\TaskManager\\TaskManagerNew\\TM.Model.Business\\TM.Model.Business.csproj": {
+                "projectPath": "F:\\TaskManager\\TaskManagerNew\\TM.Model.Business\\TM.Model.Business.csproj"
               }
             }
           }
@@ -46,6 +46,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.Extensions.Caching.Abstractions": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -62,21 +68,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\git repository\\TaskManager\\TM.Database.Repository\\TM.Database.Repository.csproj": {
+    "F:\\TaskManager\\TaskManagerNew\\TM.Database.Repository\\TM.Database.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\git repository\\TaskManager\\TM.Database.Repository\\TM.Database.Repository.csproj",
+        "projectUniqueName": "F:\\TaskManager\\TaskManagerNew\\TM.Database.Repository\\TM.Database.Repository.csproj",
         "projectName": "TM.Database.Repository",
-        "projectPath": "D:\\git repository\\TaskManager\\TM.Database.Repository\\TM.Database.Repository.csproj",
-        "packagesPath": "C:\\Users\\sudee\\.nuget\\packages\\",
-        "outputPath": "D:\\git repository\\TaskManager\\TM.Database.Repository\\obj\\",
+        "projectPath": "F:\\TaskManager\\TaskManagerNew\\TM.Database.Repository\\TM.Database.Repository.csproj",
+        "packagesPath": "C:\\Users\\Nspira\\.nuget\\packages\\",
+        "outputPath": "F:\\TaskManager\\TaskManagerNew\\TM.Database.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\sudee\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Nspira\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -90,11 +96,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\git repository\\TaskManager\\TM.Infrastructure.Dapper\\TM.Infrastructure.Dapper.csproj": {
-                "projectPath": "D:\\git repository\\TaskManager\\TM.Infrastructure.Dapper\\TM.Infrastructure.Dapper.csproj"
+              "F:\\TaskManager\\TaskManagerNew\\TM.Infrastructure.Dapper\\TM.Infrastructure.Dapper.csproj": {
+                "projectPath": "F:\\TaskManager\\TaskManagerNew\\TM.Infrastructure.Dapper\\TM.Infrastructure.Dapper.csproj"
               },
-              "D:\\git repository\\TaskManager\\WebApplication2\\WebApplication2.csproj": {
-                "projectPath": "D:\\git repository\\TaskManager\\WebApplication2\\WebApplication2.csproj"
+              "F:\\TaskManager\\TaskManagerNew\\TM.Model.Business\\TM.Model.Business.csproj": {
+                "projectPath": "F:\\TaskManager\\TaskManagerNew\\TM.Model.Business\\TM.Model.Business.csproj"
               }
             }
           }
@@ -108,6 +114,16 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.123, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -124,21 +140,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\git repository\\TaskManager\\TM.Domain\\TM.Domain.csproj": {
+    "F:\\TaskManager\\TaskManagerNew\\TM.Domain\\TM.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\git repository\\TaskManager\\TM.Domain\\TM.Domain.csproj",
+        "projectUniqueName": "F:\\TaskManager\\TaskManagerNew\\TM.Domain\\TM.Domain.csproj",
         "projectName": "TM.Domain",
-        "projectPath": "D:\\git repository\\TaskManager\\TM.Domain\\TM.Domain.csproj",
-        "packagesPath": "C:\\Users\\sudee\\.nuget\\packages\\",
-        "outputPath": "D:\\git repository\\TaskManager\\TM.Domain\\obj\\",
+        "projectPath": "F:\\TaskManager\\TaskManagerNew\\TM.Domain\\TM.Domain.csproj",
+        "packagesPath": "C:\\Users\\Nspira\\.nuget\\packages\\",
+        "outputPath": "F:\\TaskManager\\TaskManagerNew\\TM.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\sudee\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Nspira\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -152,11 +168,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\git repository\\TaskManager\\TM.Database.Repository\\TM.Database.Repository.csproj": {
-                "projectPath": "D:\\git repository\\TaskManager\\TM.Database.Repository\\TM.Database.Repository.csproj"
+              "F:\\TaskManager\\TaskManagerNew\\TM.Database.Repository\\TM.Database.Repository.csproj": {
+                "projectPath": "F:\\TaskManager\\TaskManagerNew\\TM.Database.Repository\\TM.Database.Repository.csproj"
               },
-              "D:\\git repository\\TaskManager\\WebApplication2\\WebApplication2.csproj": {
-                "projectPath": "D:\\git repository\\TaskManager\\WebApplication2\\WebApplication2.csproj"
+              "F:\\TaskManager\\TaskManagerNew\\TM.Model.Business\\TM.Model.Business.csproj": {
+                "projectPath": "F:\\TaskManager\\TaskManagerNew\\TM.Model.Business\\TM.Model.Business.csproj"
               }
             }
           }
@@ -186,21 +202,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\git repository\\TaskManager\\TM.Infrastructure.Dapper\\TM.Infrastructure.Dapper.csproj": {
+    "F:\\TaskManager\\TaskManagerNew\\TM.Infrastructure.Dapper\\TM.Infrastructure.Dapper.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\git repository\\TaskManager\\TM.Infrastructure.Dapper\\TM.Infrastructure.Dapper.csproj",
+        "projectUniqueName": "F:\\TaskManager\\TaskManagerNew\\TM.Infrastructure.Dapper\\TM.Infrastructure.Dapper.csproj",
         "projectName": "TM.Infrastructure.Dapper",
-        "projectPath": "D:\\git repository\\TaskManager\\TM.Infrastructure.Dapper\\TM.Infrastructure.Dapper.csproj",
-        "packagesPath": "C:\\Users\\sudee\\.nuget\\packages\\",
-        "outputPath": "D:\\git repository\\TaskManager\\TM.Infrastructure.Dapper\\obj\\",
+        "projectPath": "F:\\TaskManager\\TaskManagerNew\\TM.Infrastructure.Dapper\\TM.Infrastructure.Dapper.csproj",
+        "packagesPath": "C:\\Users\\Nspira\\.nuget\\packages\\",
+        "outputPath": "F:\\TaskManager\\TaskManagerNew\\TM.Infrastructure.Dapper\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\sudee\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Nspira\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -247,33 +263,33 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\git repository\\TaskManager\\WebApplication2\\WebApplication2.csproj": {
+    "F:\\TaskManager\\TaskManagerNew\\TM.Model.Business\\TM.Model.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\git repository\\TaskManager\\WebApplication2\\WebApplication2.csproj",
-        "projectName": "WebApplication2",
-        "projectPath": "D:\\git repository\\TaskManager\\WebApplication2\\WebApplication2.csproj",
-        "packagesPath": "C:\\Users\\sudee\\.nuget\\packages\\",
-        "outputPath": "D:\\git repository\\TaskManager\\WebApplication2\\obj\\",
+        "projectUniqueName": "F:\\TaskManager\\TaskManagerNew\\TM.Model.Business\\TM.Model.Business.csproj",
+        "projectName": "TM.Model.Business",
+        "projectPath": "F:\\TaskManager\\TaskManagerNew\\TM.Model.Business\\TM.Model.Business.csproj",
+        "packagesPath": "C:\\Users\\Nspira\\.nuget\\packages\\",
+        "outputPath": "F:\\TaskManager\\TaskManagerNew\\TM.Model.Business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\sudee\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Nspira\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.1"
+          "net6.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
+          "net6.0": {
+            "targetAlias": "net6.0",
             "projectReferences": {}
           }
         },
@@ -284,38 +300,8 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
-          "dependencies": {
-            "Dapper.Oracle": {
-              "target": "Package",
-              "version": "[2.0.3, )"
-            },
-            "Microsoft.AspNetCore.Authentication.JwtBearer": {
-              "target": "Package",
-              "version": "[3.1.32, )"
-            },
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[3.1.30, )"
-            },
-            "Newtonsoft.Json": {
-              "target": "Package",
-              "version": "[13.0.1, )"
-            },
-            "Oracle.ManagedDataAccess.Core": {
-              "target": "Package",
-              "version": "[3.21.80, )"
-            },
-            "Swashbuckle.AspNetCore": {
-              "target": "Package",
-              "version": "[6.5.0, )"
-            },
-            "System.Data.SqlClient": {
-              "target": "Package",
-              "version": "[4.8.5, )"
-            }
-          },
+        "net6.0": {
+          "targetAlias": "net6.0",
           "imports": [
             "net461",
             "net462",
@@ -328,14 +314,11 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

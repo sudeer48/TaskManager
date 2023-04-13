@@ -23,7 +23,7 @@ namespace WebApplication2.Controllers
     //[ApiController]
     public class ValuesController : ControllerBase
     {
-        DataContext dataContext = new DataContext();
+       // DataContext dataContext = new DataContext();
 
 
         public ValuesController(IConfiguration _configuration)

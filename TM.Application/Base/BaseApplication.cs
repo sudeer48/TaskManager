@@ -1,6 +1,3 @@
-using System;
-
-using Phonix.CrossCutting.Logging;
 using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Configuration;
 

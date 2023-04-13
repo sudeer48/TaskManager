@@ -1,0 +1,12 @@
+F:\TaskManager\TaskManagerNew\TM.Infrastructure.Dapper\bin\Debug\net6.0\TM.Infrastructure.Dapper.deps.json
+F:\TaskManager\TaskManagerNew\TM.Infrastructure.Dapper\bin\Debug\net6.0\TM.Infrastructure.Dapper.dll
+F:\TaskManager\TaskManagerNew\TM.Infrastructure.Dapper\bin\Debug\net6.0\TM.Infrastructure.Dapper.pdb
+F:\TaskManager\TaskManagerNew\TM.Infrastructure.Dapper\obj\Debug\net6.0\TM.Infrastructure.Dapper.csproj.AssemblyReference.cache
+F:\TaskManager\TaskManagerNew\TM.Infrastructure.Dapper\obj\Debug\net6.0\TM.Infrastructure.Dapper.GeneratedMSBuildEditorConfig.editorconfig
+F:\TaskManager\TaskManagerNew\TM.Infrastructure.Dapper\obj\Debug\net6.0\TM.Infrastructure.Dapper.AssemblyInfoInputs.cache
+F:\TaskManager\TaskManagerNew\TM.Infrastructure.Dapper\obj\Debug\net6.0\TM.Infrastructure.Dapper.AssemblyInfo.cs
+F:\TaskManager\TaskManagerNew\TM.Infrastructure.Dapper\obj\Debug\net6.0\TM.Infrastructure.Dapper.csproj.CoreCompileInputs.cache
+F:\TaskManager\TaskManagerNew\TM.Infrastructure.Dapper\obj\Debug\net6.0\TM.Infrastructure.Dapper.dll
+F:\TaskManager\TaskManagerNew\TM.Infrastructure.Dapper\obj\Debug\net6.0\refint\TM.Infrastructure.Dapper.dll
+F:\TaskManager\TaskManagerNew\TM.Infrastructure.Dapper\obj\Debug\net6.0\TM.Infrastructure.Dapper.pdb
+F:\TaskManager\TaskManagerNew\TM.Infrastructure.Dapper\obj\Debug\net6.0\ref\TM.Infrastructure.Dapper.dll

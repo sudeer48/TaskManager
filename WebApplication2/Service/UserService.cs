@@ -1,18 +1,15 @@
 ﻿using Dapper;
 using Microsoft.Extensions.Configuration;
-using Oracle.ManagedDataAccess.Client;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
-using WebApplication2.Entities;
-using WebApplication2.Models;
+using TM.Model.Business.EmployeeManagement;
 
 namespace WebApplication2.Service
 {
     public class UserService
     {
-        DataContext dataContext = new DataContext();
+        //DataContext dataContext = new DataContext();
         public UserService(IConfiguration _configuration) { Configuration = _configuration; }
         private static IConfiguration Configuration;
 

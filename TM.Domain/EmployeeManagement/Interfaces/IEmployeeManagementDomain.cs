@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WebApplication2.Entities;
+using TM.Model.Business.EmployeeManagement;
 
 namespace TM.Domain.EmployeeManagement.Interfaces
 {
     public interface IEmployeeManagementDomain
     {
-        Task<List<Student>> GetEmployeeDetails();
+        Task<List<EmployeeDetails>> GetEmployeeDetails();
+        Task<List<RoleInformation>> GetRoleDetails();
+        Task<EmpLeaveResponse> Deleterecord(EmployeeDetails employeeDetails);
     }
 }

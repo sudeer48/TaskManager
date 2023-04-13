@@ -5,7 +5,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
+using System.Net.Http;
 using System.Text;
+using TM.Application.EmployeeManagement.Implementations;
+using TM.Application.EmployeeManagement.Interfaces;
+using TM.Domain.EmployeeManagement.Implementations;
+using TM.Domain.EmployeeManagement.Interfaces;
 
 namespace WebApplication2
 {
@@ -66,6 +71,9 @@ namespace WebApplication2
             //        })
             //    ;
             //services.AddAuthorization();
+
+            services.AddSingleton<IEmployeeManagementApplication, EmployeeManagementApplication>();
+            services.AddSingleton<IEmployeeManagementDomain, EmployeeManagementDomain>();
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options => {
                 options.TokenValidationParameters = new TokenValidationParameters

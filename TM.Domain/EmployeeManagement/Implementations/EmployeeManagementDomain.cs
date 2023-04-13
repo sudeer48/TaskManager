@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -8,7 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using TM.Database.Repository.EmployeeManagement;
 using TM.Domain.EmployeeManagement.Interfaces;
-using WebApplication2.Entities;
+using TM.Model.Business.EmployeeManagement;
+
 
 namespace TM.Domain.EmployeeManagement.Implementations
 {
@@ -20,14 +20,34 @@ namespace TM.Domain.EmployeeManagement.Implementations
         {
             this.configuration = configuration;
         }
-        public async Task<List<Student>> GetEmployeeDetails()
+        public async Task<List<EmployeeDetails>> GetEmployeeDetails()
         {
-            List<Student> empDetails = null;
+            List<EmployeeDetails> empDetails = null;
             using (EmployeeManagementRepository empManagementRepository = new(configuration))
             {
                 empDetails = await empManagementRepository.GetEmployeeDetails();
             }
             return empDetails;
+        }
+
+        public async Task<List<RoleInformation>> GetRoleDetails()
+        {
+            List<RoleInformation> roleDetails = null;
+            using (EmployeeManagementRepository empManagementRepository = new(configuration))
+            {
+                roleDetails = await empManagementRepository.GetRoleDetails();
+            }
+            return roleDetails;
+        }
+
+        public async Task<EmpLeaveResponse> Deleterecord(EmployeeDetails employeeDetails)
+        {
+            EmpLeaveResponse response = null;
+            using (EmployeeManagementRepository empManagementRepository = new(configuration))
+            {
+                response = await empManagementRepository.DeleteRecord(employeeDetails);
+            }
+            return response;
         }
     }
 }

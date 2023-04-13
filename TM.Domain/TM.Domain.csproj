@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TM.Database.Repository\TM.Database.Repository.csproj" />
-    <ProjectReference Include="..\WebApplication2\WebApplication2.csproj" />
+    <ProjectReference Include="..\TM.Model.Business\TM.Model.Business.csproj" />
   </ItemGroup>
 
 </Project>

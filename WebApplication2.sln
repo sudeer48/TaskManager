@@ -13,15 +13,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4-Database", "4-Database", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Web", "1-Web", "{B04E54B9-56FD-4EAF-8C9A-672CFA6444A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TM.Application", "TM.Application\TM.Application.csproj", "{6BA20669-CFAE-4371-9C5E-A31703729FFD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TM.Application", "TM.Application\TM.Application.csproj", "{6BA20669-CFAE-4371-9C5E-A31703729FFD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TM.Domain", "TM.Domain\TM.Domain.csproj", "{B76F5C26-A8F2-4E48-A0EB-B2DD025495F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TM.Domain", "TM.Domain\TM.Domain.csproj", "{B76F5C26-A8F2-4E48-A0EB-B2DD025495F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TM.Database.Repository", "TM.Database.Repository\TM.Database.Repository.csproj", "{2C53B85D-C3F4-4E8B-9768-5687CEEE21FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TM.Database.Repository", "TM.Database.Repository\TM.Database.Repository.csproj", "{2C53B85D-C3F4-4E8B-9768-5687CEEE21FC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5-Infrastructure", "5-Infrastructure", "{371606FA-380D-4137-A962-F9B6A1F210EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TM.Infrastructure.Dapper", "TM.Infrastructure.Dapper\TM.Infrastructure.Dapper.csproj", "{EB175C88-1FD8-4CC1-90C7-B9BF1ABC7CBF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TM.Infrastructure.Dapper", "TM.Infrastructure.Dapper\TM.Infrastructure.Dapper.csproj", "{EB175C88-1FD8-4CC1-90C7-B9BF1ABC7CBF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6-Model", "6-Model", "{5C57A279-5402-40EC-AEC0-6D72C68620A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TM.Model.Business", "TM.Model.Business\TM.Model.Business.csproj", "{F60E438F-A759-4876-A171-C9786DB12EEF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +53,10 @@ Global
 		{EB175C88-1FD8-4CC1-90C7-B9BF1ABC7CBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB175C88-1FD8-4CC1-90C7-B9BF1ABC7CBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB175C88-1FD8-4CC1-90C7-B9BF1ABC7CBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F60E438F-A759-4876-A171-C9786DB12EEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F60E438F-A759-4876-A171-C9786DB12EEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F60E438F-A759-4876-A171-C9786DB12EEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F60E438F-A759-4876-A171-C9786DB12EEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,6 +67,7 @@ Global
 		{B76F5C26-A8F2-4E48-A0EB-B2DD025495F9} = {B7CD2BFB-E1A4-4315-8D8D-6215A1B0B653}
 		{2C53B85D-C3F4-4E8B-9768-5687CEEE21FC} = {5DF39B48-71BC-4B63-9CB4-093E9212C25D}
 		{EB175C88-1FD8-4CC1-90C7-B9BF1ABC7CBF} = {371606FA-380D-4137-A962-F9B6A1F210EE}
+		{F60E438F-A759-4876-A171-C9786DB12EEF} = {5C57A279-5402-40EC-AEC0-6D72C68620A4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CF14A061-13A9-43F8-A051-DB95FA34A15D}
