@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TM.Application\TM.Application.csproj" />
+    <ProjectReference Include="..\TM.Helpers.Helper\TM.Helpers.Helper.csproj" />
     <ProjectReference Include="..\TM.Model.Business\TM.Model.Business.csproj" />
   </ItemGroup>
 

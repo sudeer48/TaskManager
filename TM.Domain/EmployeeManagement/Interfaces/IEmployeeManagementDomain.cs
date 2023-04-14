@@ -11,6 +11,6 @@ namespace TM.Domain.EmployeeManagement.Interfaces
     {
         Task<List<EmployeeDetails>> GetEmployeeDetails();
         Task<List<RoleInformation>> GetRoleDetails();
-        Task<EmpLeaveResponse> Deleterecord(EmployeeDetails employeeDetails);
+        Task<EmpLeaveResponse> Deleterecord(int empId);
     }
 }

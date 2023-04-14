@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using TM.Helper.Helper;
 using TM.Model.Business.EmployeeManagement;
 
 namespace WebApplication2.Service
@@ -14,24 +15,43 @@ namespace WebApplication2.Service
         private static IConfiguration Configuration;
 
         string str1 = "Data Source=.;Initial Catalog=TaskManager;Integrated Security=True";
-        public IList<LoginViewModel> Authenticate(LoginViewModel loginViewModel)
+        public bool Authenticate(LoginViewModel loginViewModel)
         {
             using (var dbConn = new SqlConnection(str1))
             {
+                bool isLogin = false;
                 string strQuery = string.Empty;
+                string decryptedVal = string.Empty;
+                List<LoginViewModel> loginViewModels = null;
                 try
                 {
                     dbConn.Open();
-                    strQuery = @"SELECT * FROM TBL_EMPLOYEE_DTL WHERE USERNAME='" + loginViewModel.username + "' AND PASSWORD='" + loginViewModel.password + "'";
-                    var a = dbConn.Query<LoginViewModel>(strQuery);
+                    strQuery = @"SELECT * FROM TBL_EMPLOYEE_DTL WHERE USERNAME='" + loginViewModel.username + "'";
+                    loginViewModels = dbConn.Query<LoginViewModel>(strQuery).ToList();
+                    if (loginViewModels.Count > 0)
+                    {
+                        decryptedVal = EncryptDecrypt.DecryptString(loginViewModels.FirstOrDefault().password, ApplicationSettings.Current.Key);
+                    }
+                    else
+                    {
+                        return isLogin;
+                    }
+
+                    if (loginViewModel.password == decryptedVal)
+                    {
+                        isLogin = true;
+                    }
+                    else
+                    {
+                        isLogin = false;
+                    }
                 }
                 catch (System.Exception ex)
                 {
-
                     throw;
                 }
 
-                return dbConn.Query<LoginViewModel>(strQuery).ToList();
+                return isLogin;
             }
 
         }

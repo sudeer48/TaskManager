@@ -32,9 +32,9 @@ namespace TM.Application.EmployeeManagement.Implementations
             return roleDetails;
         }
 
-        public async Task<EmpLeaveResponse> Deleterecord(EmployeeDetails employeeDetails)
+        public async Task<EmpLeaveResponse> Deleterecord(int empId)
         {
-            EmpLeaveResponse response = await employeeManagementDomain.Deleterecord(employeeDetails);           
+            EmpLeaveResponse response = await employeeManagementDomain.Deleterecord(empId);           
             return response;
         }
     }

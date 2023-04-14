@@ -1,0 +1,15 @@
+F:\TaskManager\TaskManagerNew\TM.Infrastructure.EntityFramework\bin\Debug\net6.0\TM.Infrastructure.EntityFramework.deps.json
+F:\TaskManager\TaskManagerNew\TM.Infrastructure.EntityFramework\bin\Debug\net6.0\TM.Infrastructure.EntityFramework.dll
+F:\TaskManager\TaskManagerNew\TM.Infrastructure.EntityFramework\bin\Debug\net6.0\TM.Infrastructure.EntityFramework.pdb
+F:\TaskManager\TaskManagerNew\TM.Infrastructure.EntityFramework\bin\Debug\net6.0\TM.Model.Business.dll
+F:\TaskManager\TaskManagerNew\TM.Infrastructure.EntityFramework\bin\Debug\net6.0\TM.Model.Business.pdb
+F:\TaskManager\TaskManagerNew\TM.Infrastructure.EntityFramework\obj\Debug\net6.0\TM.Infrastructure.EntityFramework.csproj.AssemblyReference.cache
+F:\TaskManager\TaskManagerNew\TM.Infrastructure.EntityFramework\obj\Debug\net6.0\TM.Infrastructure.EntityFramework.GeneratedMSBuildEditorConfig.editorconfig
+F:\TaskManager\TaskManagerNew\TM.Infrastructure.EntityFramework\obj\Debug\net6.0\TM.Infrastructure.EntityFramework.AssemblyInfoInputs.cache
+F:\TaskManager\TaskManagerNew\TM.Infrastructure.EntityFramework\obj\Debug\net6.0\TM.Infrastructure.EntityFramework.AssemblyInfo.cs
+F:\TaskManager\TaskManagerNew\TM.Infrastructure.EntityFramework\obj\Debug\net6.0\TM.Infrastructure.EntityFramework.csproj.CoreCompileInputs.cache
+F:\TaskManager\TaskManagerNew\TM.Infrastructure.EntityFramework\obj\Debug\net6.0\TM.Infrastructure.EntityFramework.csproj.CopyComplete
+F:\TaskManager\TaskManagerNew\TM.Infrastructure.EntityFramework\obj\Debug\net6.0\TM.Infrastructure.EntityFramework.dll
+F:\TaskManager\TaskManagerNew\TM.Infrastructure.EntityFramework\obj\Debug\net6.0\refint\TM.Infrastructure.EntityFramework.dll
+F:\TaskManager\TaskManagerNew\TM.Infrastructure.EntityFramework\obj\Debug\net6.0\TM.Infrastructure.EntityFramework.pdb
+F:\TaskManager\TaskManagerNew\TM.Infrastructure.EntityFramework\obj\Debug\net6.0\ref\TM.Infrastructure.EntityFramework.dll

@@ -36,3 +36,5 @@ D:\git repository\TaskManager\TM.Domain\obj\Debug\net6.0\TM.Domain.dll
 D:\git repository\TaskManager\TM.Domain\obj\Debug\net6.0\refint\TM.Domain.dll
 D:\git repository\TaskManager\TM.Domain\obj\Debug\net6.0\TM.Domain.pdb
 D:\git repository\TaskManager\TM.Domain\obj\Debug\net6.0\ref\TM.Domain.dll
+F:\TaskManager\TaskManagerNew\TM.Domain\bin\Debug\net6.0\TM.Infrastructure.EntityFramework.dll
+F:\TaskManager\TaskManagerNew\TM.Domain\bin\Debug\net6.0\TM.Infrastructure.EntityFramework.pdb

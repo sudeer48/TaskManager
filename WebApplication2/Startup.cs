@@ -11,6 +11,7 @@ using TM.Application.EmployeeManagement.Implementations;
 using TM.Application.EmployeeManagement.Interfaces;
 using TM.Domain.EmployeeManagement.Implementations;
 using TM.Domain.EmployeeManagement.Interfaces;
+using TM.Helper.Helper;
 
 namespace WebApplication2
 {
@@ -75,7 +76,8 @@ namespace WebApplication2
             services.AddSingleton<IEmployeeManagementApplication, EmployeeManagementApplication>();
             services.AddSingleton<IEmployeeManagementDomain, EmployeeManagementDomain>();
 
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options => {
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+            {
                 options.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuer = true,
@@ -83,7 +85,7 @@ namespace WebApplication2
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
                     ValidIssuer = Configuration["Jwt:Issuer"],
-                    ValidAudience =Configuration["Jwt:Audience"],
+                    ValidAudience = Configuration["Jwt:Audience"],
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
                 };
             });

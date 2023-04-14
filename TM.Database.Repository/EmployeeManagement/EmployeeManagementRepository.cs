@@ -3,12 +3,14 @@ using Phoenix.Infrastructure.Dapper;
 using TM.Model.Business.EmployeeManagement;
 using System.Data.SqlClient;
 using Dapper;
+using TM.Infrastructure.EntityFramework;
 
 namespace TM.Database.Repository.EmployeeManagement
 {
     public class EmployeeManagementRepository: BaseRepository
     {
         private readonly IConfiguration configuration;
+        EmployeeDbContext _dbContext = new EmployeeDbContext();
         public EmployeeManagementRepository(IConfiguration configuration) : base(configuration)
         {
             this.configuration = configuration;
@@ -17,6 +19,17 @@ namespace TM.Database.Repository.EmployeeManagement
         public async Task<List<EmployeeDetails>> GetEmployeeDetails()
         {
             List<EmployeeDetails> students = new List<EmployeeDetails>();
+            try
+            {
+                var data = this._dbContext.employeeDetails.ToList();
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+       
+
             using (var dbConn = new SqlConnection(str1))
             {
                 GetRoleDetails();
@@ -59,7 +72,7 @@ namespace TM.Database.Repository.EmployeeManagement
             }
         }
 
-        public async Task<EmpLeaveResponse> DeleteRecord(EmployeeDetails students)
+        public async Task<EmpLeaveResponse> DeleteRecord(int studentid)
         {
             EmpLeaveResponse response = null;
             int affectedRows = 0;
@@ -71,7 +84,7 @@ namespace TM.Database.Repository.EmployeeManagement
                 {
 
                     connection.Open();
-                    affectedRows = connection.Execute(@"DELETE FROM TBL_EMPLOYEE_DTL where Id='" + students.id + "'");
+                    affectedRows = connection.Execute(@"DELETE FROM TBL_EMPLOYEE_DTL where Id='" + studentid + "'");
                     connection.Close();
                     affectedRows = +1;
 

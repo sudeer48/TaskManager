@@ -1,0 +1,5 @@
+F:\TaskManager\TaskManagerNew\TM.Helper.Helper\obj\Debug\net6.0\TM.Helper.Helper.csproj.AssemblyReference.cache
+F:\TaskManager\TaskManagerNew\TM.Helper.Helper\obj\Debug\net6.0\TM.Helper.Helper.GeneratedMSBuildEditorConfig.editorconfig
+F:\TaskManager\TaskManagerNew\TM.Helper.Helper\obj\Debug\net6.0\TM.Helper.Helper.AssemblyInfoInputs.cache
+F:\TaskManager\TaskManagerNew\TM.Helper.Helper\obj\Debug\net6.0\TM.Helper.Helper.AssemblyInfo.cs
+F:\TaskManager\TaskManagerNew\TM.Helper.Helper\obj\Debug\net6.0\TM.Helper.Helper.csproj.CoreCompileInputs.cache

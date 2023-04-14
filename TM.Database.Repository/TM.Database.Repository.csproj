@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TM.Infrastructure.Dapper\TM.Infrastructure.Dapper.csproj" />
+    <ProjectReference Include="..\TM.Infrastructure.EntityFramework\TM.Infrastructure.EntityFramework.csproj" />
     <ProjectReference Include="..\TM.Model.Business\TM.Model.Business.csproj" />
   </ItemGroup>
 

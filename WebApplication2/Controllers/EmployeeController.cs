@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -8,12 +9,14 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using TM.Application.EmployeeManagement.Implementations;
 using TM.Application.EmployeeManagement.Interfaces;
 using TM.Model.Business.EmployeeManagement;
+using TM.Helper.Helper;
 using WebApplication2.Service;
 
 namespace WebApplication2.Controllers
@@ -76,7 +79,8 @@ namespace WebApplication2.Controllers
                     int count = connection.Query<EmployeeDetails>(strQuery).Count();
                     if (count == 0) 
                     {
-                        affectedRows = connection.Execute(@"Insert into TBL_EMPLOYEE_DTL(Id, Name,SchoolId,Grade,username,password,RoleId) values ('" + students.id + "','" + students.name + "','" + students.schoolId + "','" + students.grade + "','" + students.username + "','" + students.password + "','"+ students.roleId+ "')");
+                        string encryptedVal = EncryptDecrypt.EncryptString(students.password, ApplicationSettings.Current.Key);
+                        affectedRows = connection.Execute(@"Insert into TBL_EMPLOYEE_DTL(Id, Name,SchoolId,Grade,username,password,RoleId) values ('" + students.id + "','" + students.name + "','" + students.schoolId + "','" + students.grade + "','" + students.username + "','" + encryptedVal + "','"+ students.roleId+ "')");
                         //affectedRows = +1;
                     }
                     else
@@ -129,24 +133,22 @@ namespace WebApplication2.Controllers
 
         // DELETE api/<ValuesController>/5
         [Route("api/DeleteRecord")]
-        [HttpPost]
-        //[HttpDelete("{id}")]
-        public async Task<EmpLeaveResponse> Delete([FromBody] EmployeeDetails employeeDetails)
+        [HttpDelete]
+        public async Task<EmpLeaveResponse> Delete(int empId)
         {
             EmpLeaveResponse response = null;
-            response= await employeeManagementApplication.Deleterecord(employeeDetails);
+            response= await employeeManagementApplication.Deleterecord(empId);
             return response;
         }
 
         [Route("api/Authentication")]
         [HttpPost]
-        //[Authorize]
         public async Task<EmpLeaveResponse> Authentication([FromBody] LoginViewModel student)
         {
             EmpLeaveResponse response = null;
             UserService a = new UserService(Configuration);
-            var Result = a.Authenticate(student);
-            if (Result.Count == 0)
+            bool Result = a.Authenticate(student);
+            if (Result == false)
             {
                 response = new EmpLeaveResponse
                 {
@@ -156,40 +158,12 @@ namespace WebApplication2.Controllers
 
                 return response;
             }
-            //else
-            //{
-            //    response = new EmpLeaveResponse
-            //    {
-            //        Response = false,
-            //        Message = "Invalid Credentials."
-            //    };
-            //}
-
-
-
-            //var authClaims = new List<Claim>
-            //    {
-            //        new Claim(ClaimTypes.Name,student.username),
-            //        new Claim(System.IdentityModel.Tokens.Jwt.JwtRegisteredClaimNames.Jti,Guid.NewGuid().ToString())
-            //                        };
-            //var authSignInKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration["JWT:Secret"]));
-            //var token = new JwtSecurityToken(
-            //    issuer: Configuration["JWT:ValidIsuser"],
-            //    audience: Configuration["JWT:ValidAudience"],
-            //    expires: DateTime.Now.AddDays(1),
-            //    claims: authClaims,
-            //    signingCredentials: new SigningCredentials(authSignInKey, SecurityAlgorithms.HmacSha256Signature)
-            //    );
-
-            //string tokenval= new JwtSecurityTokenHandler().WriteToken(token);
-
-
+           
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
             var claims = new[]
             {
                 new Claim(ClaimTypes.NameIdentifier,student.username),
-                //new Claim(ClaimTypes.Role,user.Role)
             };
             var token = new JwtSecurityToken(Configuration["Jwt:Issuer"],
                 Configuration["Jwt:Audience"],

@@ -40,12 +40,12 @@ namespace TM.Domain.EmployeeManagement.Implementations
             return roleDetails;
         }
 
-        public async Task<EmpLeaveResponse> Deleterecord(EmployeeDetails employeeDetails)
+        public async Task<EmpLeaveResponse> Deleterecord(int empId)
         {
             EmpLeaveResponse response = null;
             using (EmployeeManagementRepository empManagementRepository = new(configuration))
             {
-                response = await empManagementRepository.DeleteRecord(employeeDetails);
+                response = await empManagementRepository.DeleteRecord(empId);
             }
             return response;
         }

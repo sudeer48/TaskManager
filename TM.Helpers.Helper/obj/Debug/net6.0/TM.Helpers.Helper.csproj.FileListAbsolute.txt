@@ -1,0 +1,12 @@
+F:\TaskManager\TaskManagerNew\TM.Helpers.Helper\bin\Debug\net6.0\TM.Helpers.Helper.deps.json
+F:\TaskManager\TaskManagerNew\TM.Helpers.Helper\bin\Debug\net6.0\TM.Helpers.Helper.dll
+F:\TaskManager\TaskManagerNew\TM.Helpers.Helper\bin\Debug\net6.0\TM.Helpers.Helper.pdb
+F:\TaskManager\TaskManagerNew\TM.Helpers.Helper\obj\Debug\net6.0\TM.Helpers.Helper.csproj.AssemblyReference.cache
+F:\TaskManager\TaskManagerNew\TM.Helpers.Helper\obj\Debug\net6.0\TM.Helpers.Helper.GeneratedMSBuildEditorConfig.editorconfig
+F:\TaskManager\TaskManagerNew\TM.Helpers.Helper\obj\Debug\net6.0\TM.Helpers.Helper.AssemblyInfoInputs.cache
+F:\TaskManager\TaskManagerNew\TM.Helpers.Helper\obj\Debug\net6.0\TM.Helpers.Helper.AssemblyInfo.cs
+F:\TaskManager\TaskManagerNew\TM.Helpers.Helper\obj\Debug\net6.0\TM.Helpers.Helper.csproj.CoreCompileInputs.cache
+F:\TaskManager\TaskManagerNew\TM.Helpers.Helper\obj\Debug\net6.0\TM.Helpers.Helper.dll
+F:\TaskManager\TaskManagerNew\TM.Helpers.Helper\obj\Debug\net6.0\refint\TM.Helpers.Helper.dll
+F:\TaskManager\TaskManagerNew\TM.Helpers.Helper\obj\Debug\net6.0\TM.Helpers.Helper.pdb
+F:\TaskManager\TaskManagerNew\TM.Helpers.Helper\obj\Debug\net6.0\ref\TM.Helpers.Helper.dll
