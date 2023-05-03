@@ -7,7 +7,7 @@ using TM.Infrastructure.EntityFramework;
 
 namespace TM.Database.Repository.EmployeeManagement
 {
-    public class EmployeeManagementRepository: BaseRepository
+    public class EmployeeManagementRepository : BaseRepository
     {
         private readonly IConfiguration configuration;
         EmployeeDbContext _dbContext = new EmployeeDbContext();
@@ -18,58 +18,26 @@ namespace TM.Database.Repository.EmployeeManagement
         string str1 = "Data Source=.;Initial Catalog=TaskManager;Integrated Security=True";
         public async Task<List<EmployeeDetails>> GetEmployeeDetails()
         {
-            List<EmployeeDetails> students = new List<EmployeeDetails>();
+            List<EmployeeDetails> employeeDetails = null;
+            employeeDetails = this._dbContext.employeeDetails.ToList();
+            return employeeDetails;
+        }
+
+        public async Task<List<RoleInformation>> GetRoleDetails()
+        {
+            List<RoleInformation> roleInformation = new List<RoleInformation>();
             try
             {
-                var data = this._dbContext.employeeDetails.ToList();
+                roleInformation = this._dbContext.roleInformation.ToList();
+
             }
             catch (Exception ex)
             {
 
                 throw;
             }
-       
+            return roleInformation;
 
-            using (var dbConn = new SqlConnection(str1))
-            {
-                GetRoleDetails();
-                string strQuery = string.Empty;
-                try
-                {
-                    dbConn.Open();
-                    strQuery = @"SELECT * FROM TBL_EMPLOYEE_DTL";
-                    students = (await dbConn.QueryAsync<EmployeeDetails>(strQuery)).ToList();
-                }
-                catch (System.Exception ex)
-                {
-
-                    throw;
-                }
-
-                return students;
-            }
-        }
-
-        public async Task<List<RoleInformation>> GetRoleDetails()
-        {
-            List<RoleInformation> students = new List<RoleInformation>();
-            using (var dbConn = new SqlConnection(str1))
-            {
-                string strQuery = string.Empty;
-                try
-                {
-                    dbConn.Open();
-                    strQuery = @"SELECT * FROM TBL_ROLEMST";
-                    students = (await dbConn.QueryAsync<RoleInformation>(strQuery)).ToList();
-                }
-                catch (System.Exception ex)
-                {
-
-                    throw;
-                }
-
-                return students;
-            }
         }
 
         public async Task<EmpLeaveResponse> DeleteRecord(int studentid)

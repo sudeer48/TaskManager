@@ -34,3 +34,5 @@ D:\git repository\TaskManager\TM.Database.Repository\obj\Debug\net6.0\TM.Databas
 D:\git repository\TaskManager\TM.Database.Repository\obj\Debug\net6.0\ref\TM.Database.Repository.dll
 F:\TaskManager\TaskManagerNew\TM.Database.Repository\bin\Debug\net6.0\TM.Infrastructure.EntityFramework.dll
 F:\TaskManager\TaskManagerNew\TM.Database.Repository\bin\Debug\net6.0\TM.Infrastructure.EntityFramework.pdb
+D:\git repository\TaskManager\TM.Database.Repository\bin\Debug\net6.0\TM.Infrastructure.EntityFramework.dll
+D:\git repository\TaskManager\TM.Database.Repository\bin\Debug\net6.0\TM.Infrastructure.EntityFramework.pdb

@@ -179,3 +179,16 @@ F:\TaskManager\TaskManagerNew\WebApplication2\obj\Debug\net6.0\refint\WebApplica
 F:\TaskManager\TaskManagerNew\WebApplication2\obj\Debug\net6.0\WebApplication2.pdb
 F:\TaskManager\TaskManagerNew\WebApplication2\obj\Debug\net6.0\WebApplication2.genruntimeconfig.cache
 F:\TaskManager\TaskManagerNew\WebApplication2\obj\Debug\net6.0\ref\WebApplication2.dll
+D:\git repository\TaskManager\WebApplication2\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+D:\git repository\TaskManager\WebApplication2\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\git repository\TaskManager\WebApplication2\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\git repository\TaskManager\WebApplication2\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+D:\git repository\TaskManager\WebApplication2\bin\Debug\net6.0\System.Runtime.Caching.dll
+D:\git repository\TaskManager\WebApplication2\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\git repository\TaskManager\WebApplication2\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\git repository\TaskManager\WebApplication2\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+D:\git repository\TaskManager\WebApplication2\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+D:\git repository\TaskManager\WebApplication2\bin\Debug\net6.0\TM.Helpers.Helper.dll
+D:\git repository\TaskManager\WebApplication2\bin\Debug\net6.0\TM.Infrastructure.EntityFramework.dll
+D:\git repository\TaskManager\WebApplication2\bin\Debug\net6.0\TM.Helpers.Helper.pdb
+D:\git repository\TaskManager\WebApplication2\bin\Debug\net6.0\TM.Infrastructure.EntityFramework.pdb

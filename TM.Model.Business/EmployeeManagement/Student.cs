@@ -7,7 +7,7 @@ namespace TM.Model.Business.EmployeeManagement
     {
         public int id { get; set; }
         public string name { get; set; }
-        public string schoolId { get; set; }
+        public int schoolId { get; set; }
         public string grade { get; set; }
         public string username { get; set; }
         public string password { get; set; }

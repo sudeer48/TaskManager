@@ -30,6 +30,7 @@ namespace WebApplication2.Service
                     loginViewModels = dbConn.Query<LoginViewModel>(strQuery).ToList();
                     if (loginViewModels.Count > 0)
                     {
+                        //string encryptVal= EncryptDecrypt.EncryptString(loginViewModels.FirstOrDefault().password, ApplicationSettings.Current.Key);
                         decryptedVal = EncryptDecrypt.DecryptString(loginViewModels.FirstOrDefault().password, ApplicationSettings.Current.Key);
                     }
                     else

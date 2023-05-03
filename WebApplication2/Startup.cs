@@ -7,8 +7,12 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using System.Net.Http;
 using System.Text;
+using TM.Application.Administration.Implementations;
+using TM.Application.Administration.Interfaces;
 using TM.Application.EmployeeManagement.Implementations;
 using TM.Application.EmployeeManagement.Interfaces;
+using TM.Domain.Administration.Implementations;
+using TM.Domain.Administration.Interfaces;
 using TM.Domain.EmployeeManagement.Implementations;
 using TM.Domain.EmployeeManagement.Interfaces;
 using TM.Helper.Helper;
@@ -52,29 +56,12 @@ namespace WebApplication2
             services = LoadAppSettings(services);
             services.AddSwaggerGen();
             services.AddMvc();
-            //services.AddAuthentication(
-            //    options => {
-            //        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-            //        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            //        options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-            //        }).AddJwtBearer(option => {
-            //            option.SaveToken = true;
-            //            option.RequireHttpsMetadata= false;
-            //            option.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters()
-            //            {
-            //                ValidateIssuer = true,
-            //                ValidateAudience = true,
-            //                ValidAudience = Configuration["JWT:ValidAudience"],
-            //                ValidIssuer = Configuration["JWT:ValidIsuser"],
-            //                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("JWT:Secret"))
-
-            //            };
-            //        })
-            //    ;
-            //services.AddAuthorization();
-
+           
             services.AddSingleton<IEmployeeManagementApplication, EmployeeManagementApplication>();
             services.AddSingleton<IEmployeeManagementDomain, EmployeeManagementDomain>();
+            services.AddSingleton<IAdministrationApplication,AdministrationApplication>();
+            services.AddSingleton<IAdministrationDomain, AdministrationDomain>();
+
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {

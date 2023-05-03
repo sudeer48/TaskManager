@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "f41eiOCUXhkyb/fukZnmKPFSagwsNgM4y0IVw8wh6eOLpEIqhPivSTB4WW5yFUJkYUeIGm2MVSdP2b699wVEug==",
+  "dgSpecHash": "SVrE8h2XDpyZZ07fvqKIiJK+I9OqNOja3/hlxrISB241rW5ADVAj0iYtXPhR9SbmYdyVR1JMK3FBLu79iecOgw==",
   "success": true,
-  "projectFilePath": "F:\\TaskManager\\TaskManagerNew\\TM.Infrastructure.Dapper\\TM.Infrastructure.Dapper.csproj",
+  "projectFilePath": "D:\\git repository\\TaskManager\\TM.Infrastructure.Dapper\\TM.Infrastructure.Dapper.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Nspira\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.1.30\\microsoft.extensions.configuration.abstractions.3.1.30.nupkg.sha512",
-    "C:\\Users\\Nspira\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.30\\microsoft.extensions.primitives.3.1.30.nupkg.sha512"
+    "C:\\Users\\sudee\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.1.30\\microsoft.extensions.configuration.abstractions.3.1.30.nupkg.sha512",
+    "C:\\Users\\sudee\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.30\\microsoft.extensions.primitives.3.1.30.nupkg.sha512"
   ],
   "logs": []
 }

@@ -4,3 +4,4 @@
 
 /.vs
 /WebApplication2/bin/Debug/netcoreapp3.1/runtimes
+/TM.Application/bin/Debug/net6.0

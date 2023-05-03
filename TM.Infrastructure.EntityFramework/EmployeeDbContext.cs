@@ -18,6 +18,9 @@ namespace TM.Infrastructure.EntityFramework
         
 
         public DbSet<EmployeeDetails> employeeDetails { get; set; }
+        public DbSet<RoleInformation> roleInformation { get; set; }
+        public DbSet<MenuDetails> menuDetails { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

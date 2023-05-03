@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nWirYExJ1SoAegZphmAxU3rK1QfaBqlfD+i47eNgPSZSvIcdrpp2RmPgq6HmbmRUHiy9F3AHZncWkQoLrKxTow==",
+  "dgSpecHash": "DZuvTaeEQTCn+Z+OFBCEkjNsCzpYFXh0TO1O8V5JleNmDupAh4NXi4nv08FUAeuPJlxZ477ccwKd96N8tX3UZg==",
   "success": true,
-  "projectFilePath": "F:\\TaskManager\\TaskManagerNew\\TM.Helpers.Helper\\TM.Helpers.Helper.csproj",
+  "projectFilePath": "D:\\git repository\\TaskManager\\TM.Helpers.Helper\\TM.Helpers.Helper.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

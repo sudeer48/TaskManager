@@ -13,3 +13,18 @@ F:\TaskManager\TaskManagerNew\TM.Infrastructure.EntityFramework\obj\Debug\net6.0
 F:\TaskManager\TaskManagerNew\TM.Infrastructure.EntityFramework\obj\Debug\net6.0\refint\TM.Infrastructure.EntityFramework.dll
 F:\TaskManager\TaskManagerNew\TM.Infrastructure.EntityFramework\obj\Debug\net6.0\TM.Infrastructure.EntityFramework.pdb
 F:\TaskManager\TaskManagerNew\TM.Infrastructure.EntityFramework\obj\Debug\net6.0\ref\TM.Infrastructure.EntityFramework.dll
+D:\git repository\TaskManager\TM.Infrastructure.EntityFramework\bin\Debug\net6.0\TM.Infrastructure.EntityFramework.deps.json
+D:\git repository\TaskManager\TM.Infrastructure.EntityFramework\bin\Debug\net6.0\TM.Infrastructure.EntityFramework.dll
+D:\git repository\TaskManager\TM.Infrastructure.EntityFramework\bin\Debug\net6.0\TM.Infrastructure.EntityFramework.pdb
+D:\git repository\TaskManager\TM.Infrastructure.EntityFramework\bin\Debug\net6.0\TM.Model.Business.dll
+D:\git repository\TaskManager\TM.Infrastructure.EntityFramework\bin\Debug\net6.0\TM.Model.Business.pdb
+D:\git repository\TaskManager\TM.Infrastructure.EntityFramework\obj\Debug\net6.0\TM.Infrastructure.EntityFramework.csproj.AssemblyReference.cache
+D:\git repository\TaskManager\TM.Infrastructure.EntityFramework\obj\Debug\net6.0\TM.Infrastructure.EntityFramework.GeneratedMSBuildEditorConfig.editorconfig
+D:\git repository\TaskManager\TM.Infrastructure.EntityFramework\obj\Debug\net6.0\TM.Infrastructure.EntityFramework.AssemblyInfoInputs.cache
+D:\git repository\TaskManager\TM.Infrastructure.EntityFramework\obj\Debug\net6.0\TM.Infrastructure.EntityFramework.AssemblyInfo.cs
+D:\git repository\TaskManager\TM.Infrastructure.EntityFramework\obj\Debug\net6.0\TM.Infrastructure.EntityFramework.csproj.CoreCompileInputs.cache
+D:\git repository\TaskManager\TM.Infrastructure.EntityFramework\obj\Debug\net6.0\TM.Infrastructure.EntityFramework.csproj.CopyComplete
+D:\git repository\TaskManager\TM.Infrastructure.EntityFramework\obj\Debug\net6.0\TM.Infrastructure.EntityFramework.dll
+D:\git repository\TaskManager\TM.Infrastructure.EntityFramework\obj\Debug\net6.0\refint\TM.Infrastructure.EntityFramework.dll
+D:\git repository\TaskManager\TM.Infrastructure.EntityFramework\obj\Debug\net6.0\TM.Infrastructure.EntityFramework.pdb
+D:\git repository\TaskManager\TM.Infrastructure.EntityFramework\obj\Debug\net6.0\ref\TM.Infrastructure.EntityFramework.dll
