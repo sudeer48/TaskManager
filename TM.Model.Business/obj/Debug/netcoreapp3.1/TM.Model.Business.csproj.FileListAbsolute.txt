@@ -1,5 +1,0 @@
-F:\TaskManager\TaskManagerNew\TM.Model.Business\obj\Debug\netcoreapp3.1\TM.Model.Business.csproj.AssemblyReference.cache
-F:\TaskManager\TaskManagerNew\TM.Model.Business\obj\Debug\netcoreapp3.1\TM.Model.Business.GeneratedMSBuildEditorConfig.editorconfig
-F:\TaskManager\TaskManagerNew\TM.Model.Business\obj\Debug\netcoreapp3.1\TM.Model.Business.AssemblyInfoInputs.cache
-F:\TaskManager\TaskManagerNew\TM.Model.Business\obj\Debug\netcoreapp3.1\TM.Model.Business.AssemblyInfo.cs
-F:\TaskManager\TaskManagerNew\TM.Model.Business\obj\Debug\netcoreapp3.1\TM.Model.Business.csproj.CoreCompileInputs.cache
