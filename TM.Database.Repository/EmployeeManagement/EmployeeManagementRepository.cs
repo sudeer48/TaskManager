@@ -4,6 +4,7 @@ using TM.Model.Business.EmployeeManagement;
 using System.Data.SqlClient;
 using Dapper;
 using TM.Infrastructure.EntityFramework;
+using TM.Model.Business;
 
 namespace TM.Database.Repository.EmployeeManagement
 {
@@ -23,6 +24,12 @@ namespace TM.Database.Repository.EmployeeManagement
             return employeeDetails;
         }
 
+        public async Task<List<UserMessage>> GetUserMessageDetails()
+        {
+            List<UserMessage> userMessages = null;
+            userMessages = this._dbContext.userMessages.ToList();
+            return userMessages;
+        }
         public async Task<List<RoleInformation>> GetRoleDetails()
         {
             List<RoleInformation> roleInformation = new List<RoleInformation>();

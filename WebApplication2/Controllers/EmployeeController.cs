@@ -18,6 +18,7 @@ using TM.Application.EmployeeManagement.Interfaces;
 using TM.Model.Business.EmployeeManagement;
 using TM.Helper.Helper;
 using WebApplication2.Service;
+using TM.Model.Business;
 
 namespace WebApplication2.Controllers
 {
@@ -43,6 +44,14 @@ namespace WebApplication2.Controllers
         {
             List<EmployeeDetails> employeeDetails = await employeeManagementApplication.GetEmployeeDetails();
             return employeeDetails;
+        }
+
+        [Route("api/GetUserMessageDetails")]
+        [HttpGet]
+        public async Task<List<UserMessage>> GetUserMessageDetails()
+        {
+            List<UserMessage> userMessages = await employeeManagementApplication.GetUserMessageDetails();
+            return userMessages;
         }
 
         [Authorize]

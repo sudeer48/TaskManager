@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TM.Model.Business;
 using TM.Model.Business.EmployeeManagement;
 
 namespace TM.Infrastructure.EntityFramework
@@ -20,7 +21,7 @@ namespace TM.Infrastructure.EntityFramework
         public DbSet<EmployeeDetails> employeeDetails { get; set; }
         public DbSet<RoleInformation> roleInformation { get; set; }
         public DbSet<MenuDetails> menuDetails { get; set; }
-
+        public DbSet<UserMessage> userMessages { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

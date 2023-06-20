@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TM.Database.Repository.EmployeeManagement;
 using TM.Domain.EmployeeManagement.Interfaces;
+using TM.Model.Business;
 using TM.Model.Business.EmployeeManagement;
 
 
@@ -30,6 +31,15 @@ namespace TM.Domain.EmployeeManagement.Implementations
             return empDetails;
         }
 
+        public async Task<List<UserMessage>> GetUserMessageDetails()
+        {
+            List<UserMessage> userMessages = null;
+            using (EmployeeManagementRepository empManagementRepository = new(configuration))
+            {
+                userMessages = await empManagementRepository.GetUserMessageDetails();
+            }
+            return userMessages;
+        }
         public async Task<List<RoleInformation>> GetRoleDetails()
         {
             List<RoleInformation> roleDetails = null;

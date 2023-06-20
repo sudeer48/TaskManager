@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using TM.Application.EmployeeManagement.Interfaces;
 using TM.Database.Repository.EmployeeManagement;
 using TM.Domain.EmployeeManagement.Interfaces;
+using TM.Model.Business;
 using TM.Model.Business.EmployeeManagement;
 
 
@@ -36,6 +37,12 @@ namespace TM.Application.EmployeeManagement.Implementations
         {
             EmpLeaveResponse response = await employeeManagementDomain.Deleterecord(empId);           
             return response;
+        }
+
+        public async Task<List<UserMessage>> GetUserMessageDetails()
+        {
+            List<UserMessage> userMessages = await employeeManagementDomain.GetUserMessageDetails();
+            return userMessages;
         }
     }
 }

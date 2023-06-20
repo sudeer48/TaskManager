@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TM.Model.Business;
 using TM.Model.Business.EmployeeManagement;
 
 namespace TM.Domain.EmployeeManagement.Interfaces
@@ -12,5 +13,7 @@ namespace TM.Domain.EmployeeManagement.Interfaces
         Task<List<EmployeeDetails>> GetEmployeeDetails();
         Task<List<RoleInformation>> GetRoleDetails();
         Task<EmpLeaveResponse> Deleterecord(int empId);
+
+        Task<List<UserMessage>> GetUserMessageDetails();
     }
 }
